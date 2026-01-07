@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+</head>
+<body>
+    <center><h1>Employee Details</h1></center>
+    <table class="table table-success table-striped" id="abc">
+        <thead>
+            <tr align="center">
+                <th>S.no</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>City</th>
+                <th>Address</th>
+                <th>Company</th>
+                <th>Salary</th>
+                <th>Jobrole</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in employee_data %}
+            <tr align="center">
+                <td>{{i.id}}</td>
+                <td>{{i.ename}}</td>
+                <td>{{i.email}}</td>
+                <td>{{i.city}}</td>
+                <td>{{i.address}}</td>
+                <td>{{i.company}}</td>
+                <td>{{i.salary}}</td>
+                <td>{{i.jobrole}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
