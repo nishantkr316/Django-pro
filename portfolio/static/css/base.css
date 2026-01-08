@@ -1,0 +1,42 @@
+.hed nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 30px;
+}
+
+.hed nav section{
+    display: flex;
+}
+
+.hed nav section a{
+    padding-left: 20px;
+    font-size: 30px;
+}
+
+header h2{
+    color: blueviolet;
+}
+
+ nav h2{
+    font-size: 25px;
+    
+}
+main center h1{
+    color: red;
+    margin-top: 250px;
+}
+footer center h1{
+    color: darkblue;
+    
+    
+}
+
+nav{
+    background-color: cadetblue;
+}
+
+footer{
+    background-color: aqua;
+    margin-top: 350px;
+    padding: 20px;
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+</head>
+<body>
+    <h1>Blog View</h1>
+    <center>
+        <h1>Arigit Singh</h1>
+        <img src="{% static 'gallery/1.jpg' %}" alt="">
+        <img src="{% static 'gallery/2.JPG' %}" alt="">
+        <img src="{% static 'gallery/3.jpeg' %}" alt="">
+        <img src="{% static 'gallery/4.webp' %}" alt="">
+    </center>
+    <br>
+    <button><a href="{% url 'base' %}">Base</a></button>
+</body>
+</html>

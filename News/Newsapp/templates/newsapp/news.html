@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/news.css' %}">
+</head>
+<body>
+    <h1>This is {{type}} Bulleting</h1>
+
+    {% if type == 'business' %}
+    <img src="{% static 'images/ratan.webp' %}" alt="">
+    
+    {% elif type == 'sports' %}
+    <img src="{% static 'images/sports.jpeg' %}" alt="">
+
+    {% elif type == 'entertainment' %}
+    <img src="{% static 'images/arijit.jpeg' %}" alt="">
+
+    {% endif%}
+
+
+    <ul>
+        <li><h1>{{h1}}</h1></li>
+        <li><h2>{{h2}}</h2></li>
+        <li><h3>{{h3}}</h3></li>
+    </ul>
+    <a href="{% url 'home' %}"><button>Click Here</button></a>
+</body>
+</html>

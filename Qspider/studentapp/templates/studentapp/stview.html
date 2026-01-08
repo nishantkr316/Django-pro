@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/stview.css' %}">
+</head>
+<body>
+    <script src="{% static 'jsfiles/st.js' %}"></script>
+    <h1>Student Info</h1>
+    <h3>Name:-{{name}}</h3>
+    <h3>Address:-{{address}}</h3>
+    <h3>MOB NO:-{{mob}}</h3>
+    <h3>City:-{{city}}</h3>
+    <h3>State:-{{state}}</h3>
+    <img src="{% static 'images/images.webp' %}" alt="">
+    <button onclick="myfunc()">Click Here</button>
+</body>
+</html>

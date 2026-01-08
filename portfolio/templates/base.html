@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+    <header class="hed">
+        <nav>
+            <h2 class="">Portfolio</h2>
+            <section >
+                <a href="{% url 'home' %}">Home</a>
+                <a href="{% url 'contact' %}">Contact</a>
+                <a href="{% url 'about' %}">About</a>
+                <a href="{% url 'blog' %}">Blog</a>
+            </section>
+        </nav>
+            
+    </header>
+    <main>
+        <center>
+            <h1>My Portfolio</h1>
+        </center>
+    </main>
+    <footer>
+        <center>
+            <h1>Thanku for Visiting My Portfolio</h1>
+        </center>
+    </footer>
+</body>
+</html>

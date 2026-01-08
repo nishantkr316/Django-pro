@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+    <center>
+        <img src="{% static 'images/Hindustan_Times_logo.svg.png' %}" alt="">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id omnis ea eveniet ipsum debitis sed voluptatum sapiente! Asperiores culpa, voluptate aliquam quaerat necessitatibus molestias obcaecati quia quam veritatis consequuntur quod officia laudantium itaque? Illum, laudantium fuga. Dolorem itaque aspernatur dignissimos, autem temporibus culpa error quod vero soluta tenetur dolores quos!</p>
+    </center>
+
+    <ul>
+        <li><a href="{% url 'bussiness' %}">Bussiness News</a></li>
+        <li><a href="{% url 'sports' %}">Sports News</a></li>
+        <li><a href="{% url 'entertainment' %}">Entertainment News</a></li>
+    </ul>
+</body>
+</html>

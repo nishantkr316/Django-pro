@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>All  Student Data</h1>
+    <hr>
+    <ul>
+        {% for i in student_data %}
+        <h2>Student id:-{{i.id}}</h2>
+        <li><h2>{{i.name}}</h2></li>
+        <li><h2>{{i.roll_no}}</h2></li>
+        <li><h2>{{i.subject}}</h2></li>
+        <li><h2>{{i.address}}</h2></li>
+        <li><h2>{{i.email}}</h2></li>
+        <li><h2>{{i.is_active}}</h2></li>
+        <br>
+        {% endfor %}
+    </ul>
+    
+</body>
+</html>
