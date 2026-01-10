@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block base %}
+<center><h1>Selected Employee</h1></center>
+<table class="table table-success table-striped" id="abc">
+        <thead>
+            <tr align="center">
+                <th>S.no</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>City</th>
+                <th>Address</th>
+                <th>Company</th>
+                <th>Salary</th>
+                <th>Jobrole</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in employee_data %}
+            <tr align="center">
+                <td>{{i.id}}</td>
+                <td>{{i.ename}}</td>
+                <td>{{i.email}}</td>
+                <td>{{i.city}}</td>
+                <td>{{i.address}}</td>
+                <td>{{i.company}}</td>
+                <td>{{i.salary}}</td>
+                <td>{{i.jobrole}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
