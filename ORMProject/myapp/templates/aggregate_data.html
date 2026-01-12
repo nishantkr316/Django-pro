@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+{% block base %}
+<center><h1>This is Aggregate_view</h1></center>
+<ul>
+    <li><h2>Maximum Salary ={{max.max_sal}}</h2></li>
+    <li><h2>Minimum Salary ={{min.min_sal}}</h2></li>
+    <li><h2>Avg Salary ={{avg.avg_sal}}</h2></li>
+    <li><h2>Sum of all Employee Salary ={{sum.sum_sal}}</h2></li>
+    <li><h2>Total Count Sal ={{count.count_sal}}</h2></li>
+</ul>
+    
+{% endblock %}
