@@ -1,0 +1,7 @@
+project_name	   username        password
+Collage             nishant         nishant
+collageregpro       nishant         nishant
+FeedbackFrom        nishant         nishant
+MODELPROJECT        nishant         nishant3
+ORMProject          nishant         nishant3
+Schoolproject       nishant         nishant
