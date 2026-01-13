@@ -11,8 +11,19 @@ def retrive_data(request):
 
 def fiter_data(request):
     all_data=EmployeeModel.objects.filter(salary=45157)
+    all_data=EmployeeModel.objects.filter(salary__gt=65000)
+    all_data=EmployeeModel.objects.filter(salary__gte=65000)
+    all_data=EmployeeModel.objects.filter(salary__lt=12000)
+    all_data=EmployeeModel.objects.filter(salary__gte=12000)
+    all_data=EmployeeModel.objects.filter(ename__startswith='s')
+    all_data=EmployeeModel.objects.filter(ename__endswith='s')
+    all_data=EmployeeModel.objects.filter(ename__icontains='ah')
+    all_data=EmployeeModel.objects.filter(ename__exact='Sarah Williams')
+    all_data=EmployeeModel.objects.filter(id__in=[10,20,30,101,202,303])
+    all_data=EmployeeModel.objects.filter(id__range=[10,20])
+    all_data=EmployeeModel.objects.filter (Q(id__range=[10,15]) & Q(salary__gt =50000))
     all_data=EmployeeModel.objects.filter (Q(id__range=[10,15]) | Q(salary__gt =50000))
-    all_data=EmployeeModel.objects.filter(salary__gte = 60000)
+    
     context={"employee_data":all_data}
     return render(request,'filter.html',context)
 
