@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'form.css' %}">
+    
+</head>
+<body>
+    <center>
+        {% if submitted == True %}
+        <h2>Thanks For Register Here</h2>
+        {% else %}
+        <form action="" method="post">
+            {% csrf_token %}
+            <fieldset>
+                <legend><h2>Student Registration</h2></legend>
+
+                <label for="1">Name
+                    <input type="text" id="1" placeholder="Enter your name" name="name">
+                </label>
+                <br><br>
+                <label for="2">Email
+                    <input type="email" id="2" placeholder="abc@gmail.com" name="email">
+                </label>
+                <br><br>
+                <label for="3">Mobile
+                    <input type="number" id="3" placeholder="Enter your mob-no" name="mobno">
+                </label>
+                <br><br>
+                <label for="4">Subject
+                    <input type="text" id="4" placeholder="Enter your subject" name="sub">
+                </label>
+                <br><br>
+                <label for="5">City
+                    <input type="text" id="5" placeholder="Enter your city" name="city">
+                </label>
+                <br><br>
+                <label for="6">Address
+                    <input type="text" id="6" placeholder="Enter your Address " name="add">
+                </label>
+                <br><br>
+                <button>Submit</button>
+                
+            </fieldset>  
+        </form>
+
+        {% endif %}
+    </center>
+    <button id="hc"><a href="{% url 'data' %}">Data Details</a></button>
+</body>
+</html>

@@ -1,0 +1,10 @@
+fieldset{
+    width: 300px;
+    height: 350px;
+}
+legend{
+    color: brown;
+}
+#hc{
+    margin-left: 50px;
+}
