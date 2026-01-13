@@ -7,15 +7,22 @@
 </head>
 <body>
     <center>
+    {% if submitted == True %}
+    <h2>Thanks For Feedback</h2>
+    {% else %}
+    
         <h1>Enter Your Feedback</h1>
         <form action="" method="post">
             {% csrf_token %}
-            <input type="text" placeholder="Enter your name" name="Name">
+            <input type="text" placeholder="Enter your name" name="name">
             <br>
-            <textarea id="" name="feedback"  >Feedback</textarea>
+            <textarea id="" placeholder="Feedback" name="feedback"  ></textarea>
             <br>
             <button>Submit</button>
         </form>
+    
+    {% endif %}
+    <button><a href="{% url 'feedback' %}">Feedback</a></button>
     </center>
 </body>
 </html>

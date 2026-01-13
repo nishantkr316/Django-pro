@@ -6,7 +6,7 @@ from django.db.models import Q,Max,Min,Avg,Sum,Count
 
 def retrive_data(request):
     all_data=EmployeeModel.objects.all()
-    context={"employee_data":all_data}
+    context={"all_feedback":all_data}
     return render(request,'all_data.html',context)
 
 def fiter_data(request):
