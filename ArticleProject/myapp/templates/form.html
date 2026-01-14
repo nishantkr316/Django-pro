@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="{% static 'form.css' %}">
+    
+</head>
+<body>
+    <center>
+        {% if submitted == True %}
+        <h2>Thanks For Submittions</h2>
+        {% else %}
+        <form action="" method="post">
+            {% csrf_token %}
+            <fieldset>
+                <legend><h2>Article Submittion</h2></legend>
+
+                <label for="1">Article
+                    <input type="text" id="1" placeholder="Enter your  ArticleName" name="title">
+                </label>
+                <br><br>
+                <label for="2">Description
+                    <textarea name="description" id="2"></textarea>
+                </label>
+                <br><br>
+                <label for="3">Author
+                    <input type="text" id="3" placeholder="Enter your author" name="author">
+                </label>
+                <br><br>
+                <label for="4">Date
+                    <input type="date" id="4" placeholder="" name="date">
+                </label>
+                <br><br>
+                <button>Submit</button> 
+            </fieldset>  
+        </form>
+
+        {% endif %}
+    </center>
+    <button><a href="{% url 'home' %}">Home</a></button>
+    <button><a href="{% url 'all_article' %}">All Article</a></button>
+    <button><a href="{% url 'spc_art' %}">Spec_article</a></button>
+    
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Article</title>
+</head>
+<body>
+    <center>
+        <h1 style="color: red ;">All Article Details</h1>
+    </center>
+            {% for i in details %}
+            <ul>
+                <li><h1>{{i.title}}</h1></li>
+                <li><p>{{i.description}}</p></li>
+                <li><h3> By:-{{i.author}}</h3></li>
+                <li><h4>Publish on:-{{i.date}}</h4></li>
+            </ul>   
+            {% endfor %}
+    <center>
+        <button><a href="{% url 'spc_art' %}">Spec_article</a></button>
+        <button><a href="{% url 'form' %}">Form Page</a></button>
+        <button><a href="{% url 'home' %}">Home</a></button>
+    </center>
+    
+</body>
+</html>

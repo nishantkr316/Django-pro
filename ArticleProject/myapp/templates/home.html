@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+</head>
+<body>
+    <center>
+        <h1>Welcome To The ArticleWorld</h1>
+    </center>
+    <center>
+        <button><a href="{% url 'form' %}">Form Page</a></button>
+        <button><a href="{% url 'all_article' %}">All Article</a></button>
+        <button><a href="{% url 'spc_art' %}">Spec_article</a></button>
+    </center>
+
+</body>
+</html>
