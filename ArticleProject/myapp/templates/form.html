@@ -16,7 +16,7 @@
         <form action="" method="post">
             {% csrf_token %}
             <fieldset>
-                <legend><h2>Article Submittion</h2></legend>
+                <legend><h2>Create Articles...</h2></legend>
 
                 <label for="1">Article
                     <input type="text" id="1" placeholder="Enter your  ArticleName" name="title">
@@ -42,7 +42,6 @@
     </center>
     <button><a href="{% url 'home' %}">Home</a></button>
     <button><a href="{% url 'all_article' %}">All Article</a></button>
-    <button><a href="{% url 'spc_art' %}">Spec_article</a></button>
     
 </body>
 </html>

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,21 +11,19 @@
     <center>
         <h1 style="color: red;">Filter Article Details</h1>
     </center>
-            {% for i in details %}
-            <ul>
-                <li><h1>{{i.title}}</h1></li>
-                <li><p>{{i.description}}</p></li>
-                <li><h3> By:-{{i.author}}</h3></li>
-                <li><h4>Publish on:-{{i.date}}</h4></li>
-            </ul>   
-            {% endfor %}
-    
-    
-
+            
+                <h1>{{data.title}}</h1>
+                <h3> By:-{{data.author}} on {{data.date}}</h3>
+                <hr>
+                <p>{{data.description}}</p>
+                
+        
     <center>
         <button><a href="{% url 'home' %}">Home</a></button>
         <button><a href="{% url 'form' %}">Form Page</a></button>
         <button><a href="{% url 'all_article' %}">All Article</a></button>
+        <button><a href="#">Update</a></button>
+        <button><a href="#">Delete</a></button>
     </center>
 </body>
 </html>

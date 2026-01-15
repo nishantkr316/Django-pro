@@ -20,6 +20,6 @@ def allarticle_view(request):
     alldata=ArticleModle.objects.all()
     return render(request,'all_articles.html',{'details':alldata})
 
-def spc_article_view(request):
-    alldata=ArticleModle.objects.filter(id=3)
-    return render(request,'spec_art.html',{'details':alldata})
+def spc_article_view(request,id):
+    data=ArticleModle.objects.get(id = id)
+    return render(request,'spec_art.html',{'data':data})
