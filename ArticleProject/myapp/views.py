@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from myapp.models import ArticleModle
 
 # Create your views here.
@@ -23,3 +23,21 @@ def allarticle_view(request):
 def spc_article_view(request,id):
     data=ArticleModle.objects.get(id = id)
     return render(request,'spec_art.html',{'data':data})
+
+def delarticle_view(request,id):
+     article=ArticleModle.objects.get(id=id)
+     if request.method=='POST':
+        article.delete()
+        return redirect('all_article')
+     return render(request,'del_article.html')
+
+def update_view(request ,id):
+    data=ArticleModle.objects.get(id=id)
+    if request.method=='POST':
+        data.title=request.POST.get('title')
+        data.description=request.POST.get('description')
+        data.author=request.POST.get('author')
+        data.date=request.POST.get('date')
+        data.save()
+        return redirect('spc_art',id=data.id)
+    return render(request,'up_article.html',{'data':data})

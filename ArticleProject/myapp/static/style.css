@@ -1,0 +1,24 @@
+form{
+    width: 330px;
+    height: 400px;
+    border: 3px solid red;
+}
+legend{
+    color: crimson;
+}
+
+.but{
+    margin-top: 20px;
+
+}
+
+.butt{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.bord{
+    width: 1000px;
+    height: 120px;
+    border: 2px solid white;
+}

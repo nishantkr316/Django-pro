@@ -6,5 +6,7 @@ urlpatterns=[
     path('',views.home_view, name='home'),
     path('form/',views.form_view ,name='form'),
     path('all_art/',views.allarticle_view, name='all_article'),
-    path('spc_art/<int:id>',views.spc_article_view, name='spc_art')
+    path('spc_art/<int:id>',views.spc_article_view, name='spc_art'),
+    path('del_art/<int:id>',views.delarticle_view, name='del_art'),
+    path('upd_art/<int:id>',views.update_view, name='upd_art')
 ]
