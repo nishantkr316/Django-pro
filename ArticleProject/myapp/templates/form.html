@@ -9,13 +9,14 @@
     <link rel="stylesheet" href="{% static 'style.css' %}">
     
     
+    
 </head>
 <body class="text-bg-dark p-3">
     <center>
         {% if submitted == True %}
         <h2>Thanks For Submittions</h2>
         {% else %}
-        <form action="" method="post">
+        <form action="" method="post" class="form">
             {% csrf_token %}
             <fieldset>
                 <legend><h2>Create Articles...</h2></legend>
@@ -44,6 +45,7 @@
     </center>
     <button class="btn btn-outline-primary"><a href="{% url 'home' %}" class="link-light text-decoration-none">Home</a></button>
     <button class="btn btn-outline-info"><a href="{% url 'all_article' %}" class="link-light text-decoration-none" >All Article</a></button>
+    <button class="btn btn-outline-success"><a href="{% url 'form' %}" class="link-light text-decoration-none" >Form Page</a></button>
     
 </body>
 </html>

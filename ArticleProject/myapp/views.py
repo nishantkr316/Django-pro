@@ -16,8 +16,19 @@ def form_view(request):
         submitted=True
     return render(request,'form.html',{'submitted':submitted})
 
+
+from django.db.models import Q
 def allarticle_view(request):
     alldata=ArticleModle.objects.all()
+    query=request.GET.get('q')
+
+    if query:
+        alldata=alldata.filter(
+           Q(title__icontains=query)|
+           Q(author__icontains=query)|
+           Q(description__icontains=query)
+        )
+    print(query)
     return render(request,'all_articles.html',{'details':alldata})
 
 def spc_article_view(request,id):
@@ -41,3 +52,10 @@ def update_view(request ,id):
         data.save()
         return redirect('spc_art',id=data.id)
     return render(request,'up_article.html',{'data':data})
+
+def del_all_art_view(request):
+    if request.method=='POST':
+        ArticleModle.objects.all().delete()
+        return redirect('all_article')
+    return render(request,'del_all_art.html')
+

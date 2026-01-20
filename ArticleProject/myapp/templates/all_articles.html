@@ -14,18 +14,28 @@
     </center>
         <h2>Total no of articles:-{{details | length}}</h2>
     
+    <center>
+        <form action="" method="get">
+                <input type="text" placeholder="Search anything..." name="q">
+                <button class="btn btn-outline-success">Search</button>
+        </form>
+    </center>
+    
     {% if details %}
             {% for i in details %}
-            <ul class="bord">
+            <div class="card bg-info text-dark mt-4">
+                <ul class=" p-3 mb-2 ">
                 <h2>{{i.id}}.{{i.title | truncatechars:40}}</h2>
-                <button class="btn btn-outline-info butt"><a href="{% url 'spc_art' i.id %}"class="link-light text-decoration-none">Read More</a></button>
-            </ul>   
+                <button class="btn btn-outline-success"><a href="{% url 'spc_art' i.id %}"class="link-light text-decoration-none">Read More</a></button>
+            </ul> 
+            </div>  
             {% endfor %}
     {% endif %}
 
-    <center>
+    <center class="mt-4">
         <button class="btn btn-outline-secondary"><a href="{% url 'home' %}"class="link-light text-decoration-none">Home</a></button>
-        <button class="btn btn-outline-info"><a href="{% url 'form' %}"class="link-light text-decoration-none">Form Page</a></button>        
+        <button class="btn btn-outline-info"><a href="{% url 'form' %}"class="link-light text-decoration-none">Form Page</a></button>
+        <button class="btn btn-outline-danger"><a href="{% url 'del_all' %}"class="link-light text-decoration-none">Delete All</a></button>       
     </center>
     
 </body>
