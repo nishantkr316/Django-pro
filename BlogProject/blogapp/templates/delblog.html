@@ -1,0 +1,12 @@
+{% extends "home.html" %}
+
+{% block base %}
+    <center>
+        <h1>Are you sure You want to delete this Blog ?</h1>
+        <form action="" method="post">
+            {% csrf_token %}
+            <button class="btn btn-outline-danger">Yes</button>
+            <button class="btn btn-outline-info " type="button"><a href="{% url 'allblog' %}"class="link-light text-decoration-none" >Cancel</a></button>
+        </form>
+    </center>
+{% endblock %}

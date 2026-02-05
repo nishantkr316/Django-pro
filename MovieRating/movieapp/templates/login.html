@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <center>
+        <form action="" method="Post">
+            <fieldset>
+                <legend>Login Details...</legend>
+                {% csrf_token %}
+                {{form}}
+                <br>
+                <button class="btn btn-success">Login</button>
+            </fieldset>
+        </form>
+    </center>
+
+{% endblock %}

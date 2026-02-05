@@ -1,0 +1,29 @@
+{% extends "home.html" %}
+
+{% block base %}
+    <center>
+        <h1 class="link-warning">All Blog Details</h1>
+    </center>
+        <h2>Total no of articles:-{{details | length}}</h2>
+    
+    <center>
+        <form action="" method="get">
+                <input type="text" placeholder="Search anything..." name="q">
+                <button class="btn btn-outline-success">Search</button>
+        </form>
+    </center>
+    
+    {% if details %}
+            {% for i in details %}
+            <div class="card bg-info text-dark mt-4">
+                <ul class=" p-3 mb-2 ">
+                <h2>{{i.id}}.{{i.title | truncatechars:40}}</h2>
+                <button class="btn btn-outline-warning "><a href="{% url 'filtblog' i.id %}"class="text-body-emphasis text-decoration-none">Read More</a></button>
+            </ul> 
+            </div>  
+            {% endfor %}
+    {% endif %}
+    <center>
+        <button class="btn btn-outline-danger mt-2"><a href="{% url 'alldelblog' %}"class="link-light text-decoration-none">Delete All</a></button>
+    </center>
+{% endblock %}
