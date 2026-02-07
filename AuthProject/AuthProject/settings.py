@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'authapp'
 ]
 
-AUTHENTICATOR_BACKENDS =[
+AUTHENTICATION_BACKENDS =[
     'authapp.backends.EmailOrUserBackend',
     'django.contrib.auth.backends.ModelBackend'
 ]

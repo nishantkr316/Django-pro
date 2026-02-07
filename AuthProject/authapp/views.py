@@ -16,8 +16,6 @@ def home_view(request):
 
 
 
-
-
 def signup_view(request):
     type='Sign Up'
     form=SignupForm()
@@ -28,7 +26,7 @@ def signup_view(request):
             user=form.save(commit=False)
             user.set_password(form.cleaned_data["password"])
             user.save()
-            messages.success(request,"User is created Sucessfully...")
+            messages.success(request,"Account created successfully...")
             return redirect("login")
     return render(request, "signup.html",{'form':form,'type':type})
 
@@ -51,11 +49,11 @@ def login_view(request):
             
         if user:
             login(request,user)
-            messages.success(request,"Logged in Sucessfully")
+            messages.success(request,"Logged in successfully...")
             return redirect("home")
         
         else:
-            messages.warning(request,"Invalid credential...")
+            messages.warning(request,"Invalid username or password...")
     return render(request, "login.html",{'form':form,'type':type})
 
 
@@ -86,3 +84,19 @@ def about_view(request):
 def recent_view(request):
     type='Recent'
     return render(request, "recent.html",{'type':type})
+
+
+
+
+from django.contrib.auth.forms import PasswordChangeForm
+@login_required
+def new_password(request):
+    type ='New Password'
+    form =PasswordChangeForm(user=request.user)
+    if request.method == 'POST':
+        form = PasswordChangeForm(user=request.user, data=request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request,"Password changed successfully...")
+            return redirect('home')
+    return render(request, "new_password.html", {'form': form,'type':type})
