@@ -40,6 +40,11 @@ INSTALLED_APPS = [
     'blogapp'
 ]
 
+AUTHENTICATION_BACKENDS =[
+    'blogapp.backends.EmailOrUserBackend',
+    'django.contrib.auth.backends.ModelBackend'
+]   
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -116,3 +121,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+LOGIN_URL = 'login'

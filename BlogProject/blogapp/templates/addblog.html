@@ -1,6 +1,6 @@
 {% extends "home.html" %}
 
-{% block base %}
+{% block content %}
     <center>
         {% if submitted == True %}
         <h1>Thanku For Submit The Blog </h1>
@@ -14,15 +14,15 @@
                 </label>
                 <br><br>
                 <label for="2">Description
-                    <textarea name="description" id="2" name="description"></textarea>
+                    <textarea name="description" id="2" ></textarea>
                 </label>
                 <br><br>
-                <label for="3">Author
-                    <input type="text" name="author" id="3" name="author">
+                <label for="3">Bloger
+                    <input type="text" name="bloger" id="3" >
                 </label>
                 <br><br>
                 <label for="4">Publish on
-                    <input type="date" name="date" id="4" name="date">
+                    <input type="date" name="date" id="4" >
                 </label>
                 <br><br>
                 <button class="btn btn-outline-success">Submit</button>

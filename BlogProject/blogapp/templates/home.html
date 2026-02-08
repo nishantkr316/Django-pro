@@ -19,24 +19,31 @@
                 <span class="fs-4">BLOGWORLD</span> 
             </a> 
             <ul class="nav nav-pills">
+                {% if user.is_authenticated %}
                 <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">Home</a></li> 
                 <li class="nav-item"><a href="{% url 'addblog' %}" class="nav-link">AddBlog</a></li> 
                 <li class="nav-item"><a href="{% url 'allblog' %}" class="nav-link">AllBlog</a></li>
+                <li class="nav-item"><a href="{% url "new_password" %}" class="nav-link">Change_password</a></li>
+                <li class="nav-item px-2"><button type="button" class="btn btn-primary"><a href="{% url 'logout' %}" class="nav-link text-dark">Log out</a></button></li>
+                {% else %}
+                <li class="nav-item px-2" ><button type="button" class="btn btn-primary"><a href="{% url 'login' %}" class="nav-link text-dark">Log in</a></button></li> 
+                <li class="nav-item px-2"><button type="button" class="btn btn-primary"><a href="{% url 'signup' %}" class="nav-link text-dark">Sign up</a></button></li>
+                {% endif %}
+                
             </ul> 
         </header> 
     </div>
-{% block base %}
-    <center>
-        <h1 style="color: darkred; margin-top: 50px; font-size: 120px;">Welcome to BlogWorld</h1>
-    </center>
 
-            <center style="margin-top: 150px;">
-                <img src="{% static 'source/1.jpg' %}" alt="" style="width: 400px; height: 250px;">
-                <img src="{% static 'source/2.webp' %}" alt="" style="width: 400px; height: 250px;">
-                <img src="{% static 'source/3.webp' %}" alt="" style="width: 400px; height: 250px;">
-            </center>
-       
-{% endblock %}
+    {% block content %}
+
+
+    {% endblock %}
+
+    <center>
+        {% for message in messages %}
+        {{message}}
+        {% endfor %}
+    </center>
     
 </body>
 </html>

@@ -1,6 +1,6 @@
 {% extends "home.html" %}
 
-{% block base %}
+{% block content %}
     <center>
         <form action="" method="post" class="position-absolute top-50 start-50 translate-middle">
             {% csrf_token %}
@@ -11,15 +11,15 @@
                 </label>
                 <br><br>
                 <label for="2">Description
-                    <textarea name="description" id="2" name="description">{{data.description}}</textarea>
+                    <textarea name="description" id="2" >{{data.description}}</textarea>
                 </label>
                 <br><br>
-                <label for="3">Author
-                    <input type="text" name="author" id="3" name="author" value="{{data.author}}">
+                <label for="3">Bloger
+                    <input type="text" name="bloger" id="3" value="{{data.bloger}}">
                 </label>
                 <br><br>
                 <label for="4">Publish on
-                    <input type="date" name="date" id="4" name="date" value="{{data.date | date:'Y-m-d'}}">
+                    <input type="date" name="date" id="4" value="{{data.date | date:'Y-m-d'}}">
                 </label>
                 <br><br>
                 <button class="btn btn-outline-success">Submit</button>

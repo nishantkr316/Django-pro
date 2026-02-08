@@ -48,20 +48,6 @@ class SignupForm(forms.ModelForm):
 
 
 
-    # def clean_password(self):
-    #     import re
-    #     password =self.cleaned_data['password']
-    #     if (
-    #         len(password)< 8 or
-    #         not (re.search("\d",password)) or 
-    #         not(re.search("[A-Za-z]",password)) or 
-    #         not(re.search("\W",password))
-    #     ):
-    #         raise forms.ValidationError("password must be 8 char"
-    #                                     "must contain 1 uppercase"
-    #                                     "must contain digit and special symbol")
-    #     return password
-
         
         
 class LoginForm(forms.Form):

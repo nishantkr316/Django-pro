@@ -61,7 +61,7 @@ def login_view(request):
 
 
 
-@login_required(login_url='login')
+@login_required
 def logout_view(request):
     logout(request)
     messages.success(request,"Logged out successfully...")
@@ -71,7 +71,7 @@ def logout_view(request):
 
 
 
-
+@login_required
 def about_view(request):
     type='About'
     return render(request, "about.html",{'type':type})
