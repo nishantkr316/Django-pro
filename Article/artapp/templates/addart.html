@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<div class=" mform">
+    <form action="" method="post" enctype="multipart/form-data" class="form">
+        {% csrf_token %}
+        <fieldset class="p-4 ">
+            <center><legend class="legend">Add Article....</legend></center>
+            {{form}}
+            <center>
+                <button class="link-dark btn btn-outline-warning rounded-pill">Submit</button>
+            </center>
+        </fieldset>
+    </form>
+</div>
+
+{% endblock %}

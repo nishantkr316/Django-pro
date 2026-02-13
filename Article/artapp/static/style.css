@@ -1,0 +1,21 @@
+.form{
+    width: 450px;
+    height: 570px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+.legend{
+    color: crimson;
+}
+h1{
+    color: green;
+}
+img{
+    width: 200px;
+    height: 150px;
+}
+
+.mform{
+    margin-top: 80px;
+    margin-left: 550px;
+}

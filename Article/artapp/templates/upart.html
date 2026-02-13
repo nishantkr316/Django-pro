@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+    <div class="mform">
+        <form action="" method="post" enctype="multipart/form-data" class="form">
+        {% csrf_token %}
+        <fieldset class="p-4 ">
+            <center><legend class="legend">Update the Article details...</legend></center>
+            {{form}}
+            <center>
+                <button class="btn btn-outline-warning rounded-pill my-2">Update</button>
+            </center>
+        </fieldset>
+        </form>
+    </div>
+     <button class="btn btn-outline-info rounded-pill"><a href="{% url 'articles' %}"class="link-light text-decoration-none">All Articles</a></button>
+
+
+{% endblock %}

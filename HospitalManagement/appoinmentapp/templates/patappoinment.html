@@ -1,0 +1,25 @@
+{% extends 'home.html' %}
+{% block content %}
+<center><h2>Patient Appoinment</h2></center>
+
+<h1>Hello  {{pat.name}}</h1>
+<h2>Your appoinments are:-</h2>
+<table border="2">
+    <thead>
+        <th>S.NO</th>
+        <th>Doctor</th>
+        <th>Patient</th>
+        <th>Date</th>
+    </thead>
+    <tbody>
+    {% for i in pat.appoinments.all %}
+    <tr>
+        <td>{{i.id}}</td>
+        <td>{{i.doctor}}</td>
+        <td>{{i.patient}}</td>c
+        <td>{{i.date}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

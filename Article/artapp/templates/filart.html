@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<center>
+        <h1 class="link-warning">Full Article Details</h1>
+    </center>
+            
+                <ul>
+                    {% if article.banner %}
+                    <img src="{{ article.banner.url }}" alt="banner" class="img-fluid">
+                    {% endif %}
+                    <h1 id="title">{{article.title}}</h1>
+                    <h7 id="aut"> author-{{article.author}} on {{article.created_at}}</h7>
+                    <hr>
+                    <p id="desc">{{article.content}}</p>
+                </ul>
+
+    <center>
+        <button class="btn btn-outline-warning rounded-pill"><a href="{% url 'upart' article.id %}"class="link-light text-decoration-none">Update</a></button>
+        <button class="btn btn-outline-danger rounded-pill"><a href="{% url 'delart' article.id  %}"class="link-light text-decoration-none">Delete</a></button>
+    </center>
+
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'home.html' %}  
+{% block content %}  
+     <center>
+        <h1>Welcome to {{type}} Page</h1>
+        <h2>All Available courses</h2>
+     </center>
+     <h2 style="color: red;">No. of Courses:-{{courses|length}}</h2>
+     {% for i in courses %}
+     <ol>
+        <h1>{{i.title}}</h1>
+        <p>{{i.content}}</p>
+     </ol>
+     <button><a href="{% url 'coursefilter' i.id %}">About</a></button>
+     <hr>
+     {% endfor %}
+{% endblock %}

@@ -1,0 +1,32 @@
+boder{
+    border:2px solid black;
+}
+
+.navbar{
+    background-color: black;
+    padding: 15px;
+}
+
+a{
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    color: white;
+}
+a:hover{
+    background-color: red;
+   border-radius: 5px;
+}
+
+table{
+    width: 60%;
+    font-size: 25px;
+    text-align: center;
+}
+tr:hover{
+    background-color: seagreen;
+}
+
+li a{
+    color: black;
+}

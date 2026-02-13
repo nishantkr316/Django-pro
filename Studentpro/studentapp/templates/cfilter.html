@@ -1,0 +1,18 @@
+{% extends 'home.html' %}
+{% block content %}
+    <center><h1>Welcome to {{type}} Page</h1></center>
+        <ul>
+            <h2 style="color: crimson;">{{course.title}}</h2>
+            <h3>Students</h3>
+            <ol>
+                {% for i in students %}
+                <li>{{i.name}}</li>
+                {% endfor %}
+            </ol>
+            <center>
+                <button><a href="{% url 'delete' course.id %}">Delete</a></button>
+            </center>
+            
+        </ul>
+
+{% endblock %}

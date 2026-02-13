@@ -10,24 +10,24 @@
 </head>
 <body class=" bg-success-subtle text-success-emphasis">
 
-    <div class=" mb-2 bg-info text-dark">
+    <div class=" mb-2  text-dark" style="background-color: #8338EC;">
         <header class="d-flex flex-wrap justify-content-center py-3  border-bottom"> 
             <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"> 
                 <svg class="bi me-2" width="40" height="32" aria-hidden="true">
                     <use xlink:href="#bootstrap"></use>
                 </svg> 
-                <span class="fs-4">BLOGWORLD</span> 
+                <span class="fs-4 link-light">BLOGWORLD</span> 
             </a> 
             <ul class="nav nav-pills">
                 {% if user.is_authenticated %}
-                <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">Home</a></li> 
-                <li class="nav-item"><a href="{% url 'addblog' %}" class="nav-link">AddBlog</a></li> 
-                <li class="nav-item"><a href="{% url 'allblog' %}" class="nav-link">AllBlog</a></li>
-                <li class="nav-item"><a href="{% url "new_password" %}" class="nav-link">Change_password</a></li>
-                <li class="nav-item px-2"><button type="button" class="btn btn-primary"><a href="{% url 'logout' %}" class="nav-link text-dark">Log out</a></button></li>
+                <li class="nav-item"><a href="{% url 'home' %}" class="nav-link link-light">Home</a></li> 
+                <li class="nav-item"><a href="{% url 'addblog' %}" class="nav-link link-light">AddBlog</a></li> 
+                <li class="nav-item"><a href="{% url 'allblog' %}" class="nav-link link-light">AllBlog</a></li>
+                <li class="nav-item"><a href="{% url "new_password" %}" class="nav-link link-light">Change_password</a></li>
+                <li class="nav-item px-2"><button type="button" class="text-bg-success  rounded-pill"><a href="{% url 'logout' %}" class="nav-link text-dark">Log out</a></button></li>
                 {% else %}
-                <li class="nav-item px-2" ><button type="button" class="btn btn-primary"><a href="{% url 'login' %}" class="nav-link text-dark">Log in</a></button></li> 
-                <li class="nav-item px-2"><button type="button" class="btn btn-primary"><a href="{% url 'signup' %}" class="nav-link text-dark">Sign up</a></button></li>
+                <li class="nav-item px-2" ><button type="button" class="text-bg-success  rounded-pill"><a href="{% url 'login' %}" class="nav-link text-dark ">Log in</a></button></li> 
+                <li class="nav-item px-2"><button type="button" class="text-bg-success  rounded-pill"><a href="{% url 'signup' %}" class="nav-link text-dark">Sign up</a></button></li>
                 {% endif %}
                 
             </ul> 
